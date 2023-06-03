@@ -13,8 +13,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>19</maven.compiler.source>
+    <maven.compiler.target>19</maven.compiler.target>
 
     <jacoco.version>0.8.10</jacoco.version>
     <jersey.version>3.1.2</jersey.version>
@@ -26,7 +26,7 @@
     <postgresql.version>42.6.0</postgresql.version>
     <surefire.version>3.0.0</surefire.version>
     <jakarta-activation.version>2.1.2</jakarta-activation.version>
-    <jackson.version>2.15.1</jackson.version>
+    <jackson.version>2.15.2</jackson.version>
     <logback-classic.version>1.4.7</logback-classic.version>
     <exec.version>3.1.0</exec.version>
 
@@ -49,6 +49,13 @@
       <artifactId>jackson-dataformat-xml</artifactId>
       <version>${jackson.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-hibernate6 -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-hibernate6</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
@@ -71,6 +78,18 @@
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-grizzly2-http</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.glassfish.grizzly/grizzly-http2 -->
+    <dependency>
+      <groupId>org.glassfish.grizzly</groupId>
+      <artifactId>grizzly-http2</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.glassfish.grizzly/grizzly-npn-bootstrap -->
+    <dependency>
+      <groupId>org.glassfish.grizzly</groupId>
+      <artifactId>grizzly-npn-bootstrap</artifactId>
+      <version>2.0.0</version>
     </dependency>
 
     <dependency>

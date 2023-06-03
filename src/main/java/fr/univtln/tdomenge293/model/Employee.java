@@ -2,19 +2,22 @@ package fr.univtln.tdomenge293.model;
 
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.annotation.*;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "employees")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="position",
+        discriminatorType = DiscriminatorType.INTEGER)
 @ToString
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -26,15 +29,19 @@ public abstract class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @NonNull
+    @NotNull
     private String name;
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    @NonNull
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id",nullable = false)
+    @NotNull
     @ToString.Exclude
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
     @JsonIdentityReference(alwaysAsId = true)
     private Department department;
+    @NotNull
+    private Date birthDate;
+
+
 
     @XmlID
     @JsonIgnore

@@ -8,10 +8,10 @@ import jakarta.persistence.criteria.Root;
 import java.util.List;
 import java.util.UUID;
 
-public abstract  class GenericDAO<T>  implements AutoCloseable{
+public abstract class GenericDAO<T>  implements AutoCloseable{
 
     private final Class<T> entityClass;
-    private final EntityManager entityManager;
+    final EntityManager entityManager;
 
     public GenericDAO(Class<T> entityClass, EntityManager entityManager) {
         this.entityClass = entityClass;

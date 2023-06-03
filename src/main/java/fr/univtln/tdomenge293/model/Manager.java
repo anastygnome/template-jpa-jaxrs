@@ -1,5 +1,6 @@
 package fr.univtln.tdomenge293.model;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -13,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor(staticName = "of")
 @Entity
-@Table(name = "managers")
+@DiscriminatorValue("2")
 @XmlRootElement
 @XmlType(name = "Manager")
 
