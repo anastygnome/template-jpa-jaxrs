@@ -27,7 +27,7 @@
     <surefire.version>3.0.0</surefire.version>
     <jakarta-activation.version>2.1.2</jakarta-activation.version>
     <jackson.version>2.15.2</jackson.version>
-    <logback-classic.version>1.4.7</logback-classic.version>
+    <logback-classic.version>1.4.12</logback-classic.version>
     <exec.version>3.1.0</exec.version>
 
   </properties>
