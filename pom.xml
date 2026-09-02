@@ -23,7 +23,7 @@
     <hikaricp.version>5.0.1</hikaricp.version>
     <slf4j.version>2.0.7</slf4j.version>
     <junit.version>5.9.2</junit.version>
-    <postgresql.version>42.7.11</postgresql.version>
+    <postgresql.version>42.7.12</postgresql.version>
     <surefire.version>3.0.0</surefire.version>
     <jakarta-activation.version>2.1.2</jakarta-activation.version>
     <jackson.version>2.15.2</jackson.version>
